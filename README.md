@@ -1,0 +1,2 @@
+# sayyorlar
+sayyorlar sayti

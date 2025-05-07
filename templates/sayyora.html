@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Sayyora: {{ info["sayyora_nomi"] }}</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}" />
+    <style>
+    .planet-info p {
+            font-size: 1.1em;
+            line-height: 1.6;
+            margin-bottom: 15px;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="container planet-info">
+        <h1>{{ info["sayyora_nomi"] }}</h1>
+        <p><strong>Joylashuvi:</strong> {{ info["sayyora_joylashuvi"] }}</p>
+        <p><strong>Haqida:</strong> {{ info["sayyora_haqida"] }}</p>
+        <a href="{{ url_for('index') }}" class="add-link" style="margin-top: 20px; background-color: #6c757d;">Ortga</a>
+        <!-- Using add-link style for consistency, but changed color -->
+    </div>
+</body>
+
+</html>

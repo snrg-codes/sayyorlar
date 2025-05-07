@@ -3,11 +3,27 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <title>Sayyoralar Olami</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
 </head>
 <body>
-    {% for sayyora in sayyoralar %}
-        <a href="#"><h1>{{sayyora}}</h1></a>
-    {% endfor %}
+    <div class="container">
+        <h1>Sayyoralar Ro'yxati</h1>
+
+        <ul class="planet-list">
+            {% for sayyora_nomi in sayyoralar %}
+                <li class="planet-item">
+                    <a href="{{ url_for('sayyora_info', sayyora=sayyora_nomi) }}">
+                        <span class="planet-name">{{ sayyora_nomi }}</span>
+                    </a>
+                    <a href="{{ url_for('sayyora_uchirish', sayyora_id=loop.index) }}" class="action-link">O'chirish</a>
+                </li>
+            {% else %}
+                <li>Hozircha sayyoralar yo'q.</li>
+            {% endfor %}
+        </ul>
+
+        <a href="{{ url_for('yangi_sayyora') }}" class="add-link">Yangi Sayyora Qo'shish</a>
+    </div>
 </body>
 </html>

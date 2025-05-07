@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Yangi Sayyora Qo'shish</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+</head>
+<body>
+    <div class="container">
+        <h1>Yangi Sayyorani Qo'shish</h1>
+        <form method="POST" class="planet-form">
+
+            <input type="text" name="sayyora_nomi" placeholder="Sayyora nomini kiriting" required>
+            <input type="text" name="sayyora_joylashuvi" placeholder="Sayyora joylashuvini kiriting" required>
+            <textarea name="sayyora_haqida" placeholder="Sayyora haqida ma'lumotni kiriting" required rows="4"></textarea>
+
+            <button type="submit" class="add-link">Saqlash</button> <!-- Reusing add-link style -->
+            <a href="{{ url_for('index') }}" class="action-link" style="margin-left: 15px; background-color: #6c757d;">Bekor qilish</a> <!-- Reusing action-link style -->
+        </form>
+    </div>
+</body>
+</html>

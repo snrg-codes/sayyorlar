@@ -1,0 +1,168 @@
+body {
+    /* Deeper space background with a subtle gradient */
+    background-color: #000010; /* Very dark base */
+
+.container {
+    max-width: 800px;
+    margin: 40px auto;
+    padding: 30px;
+    background-color: rgba(10, 10, 42, 0.8); /* Slightly transparent dark background for content */
+    border-radius: 15px;
+    box-shadow: 0 0 25px rgba(0, 191, 255, 0.5); /* Deep sky blue glow */
+}
+
+.planet-list {
+    list-style: none;
+    padding: 0;
+}
+
+.planet-item {
+    background-color: rgba(20, 20, 60, 0.7);
+    margin-bottom: 15px;
+    padding: 15px 20px;
+    border-radius: 8px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.planet-item:hover {
+    transform: scale(1.03);
+    box-shadow: 0 0 15px rgba(70, 130, 180, 0.6); /* Steel blue glow on hover */
+}
+
+a {
+    color: #87cefa; /* Light sky blue */
+    text-decoration: none;
+    transition: color 0.3s ease;
+}
+
+a:hover {
+    color: #ffffff; /* White on hover */
+}
+
+h1 {
+    color: #ffffff;
+    text-align: center;
+    margin-bottom: 30px;
+    font-size: 2.5em;
+    text-shadow: 0 0 10px rgba(0, 191, 255, 0.7);
+}
+
+.planet-name {
+    font-size: 1.8em;
+    margin: 0;
+    color: #f0f8ff; /* Alice blue */
+}
+
+.action-link {
+    padding: 5px 10px;
+    border-radius: 5px;
+    background-color: #dc3545; /* Red for delete */
+    color: white;
+    font-weight: bold;
+}
+
+.action-link:hover {
+    background-color: #c82333;
+    color: white;
+}
+
+.add-link {
+    display: block;
+    width: fit-content;
+    margin: 30px auto 0;
+    padding: 12px 25px;
+    background-color: #007bff; /* Blue for add */
+    color: white;
+    border-radius: 20px;
+    font-size: 1.1em;
+    font-weight: bold;
+    text-align: center;
+}
+
+.add-link:hover {
+    background-color: #0056b3;
+    color: white;
+}
+
+/* --- Form Styles --- */
+.planet-form input[type="text"],
+.planet-form textarea {
+    display: block;
+    width: calc(100% - 40px); /* Full width minus padding */
+    padding: 12px 20px;
+    margin-bottom: 20px;
+    background-color: rgba(10, 10, 42, 0.9); /* Dark input background */
+    border: 1px solid rgba(75, 0, 130, 0.6); /* Indigo border */
+    border-radius: 8px;
+    color: #e0e0e0; /* Light text color */
+    font-size: 1em;
+    font-family: inherit; /* Use body font */
+}
+
+.planet-form input[type="text"]:focus,
+.planet-form textarea:focus {
+    outline: none;
+    border-color: #87cefa; /* Light sky blue border on focus */
+    box-shadow: 0 0 10px rgba(135, 206, 250, 0.5); /* Light blue glow on focus */
+}
+
+.planet-form button,
+.planet-form a.action-link { /* Style cancel link like a button */
+    display: inline-block; /* Allow side-by-side placement */
+    text-decoration: none; /* Remove underline from link styled as button */
+}
+
+
+
+/* Define keyframes for star movement */
+@keyframes move-stars-far {
+    from {background-position: 0 0;}
+    to {background-position: -10000px 5000px;} /* Adjust values for speed/direction */
+}
+@keyframes move-stars-mid {
+    from {background-position: 0 0;}
+    to {background-position: -10000px 8000px;} /* Slightly different speed/direction */
+}
+@keyframes move-stars-near {
+    from {background-position: 0 0;}
+    to {background-position: -5000px 10000px;} /* Fastest layer */
+}
+
+    /* Layered background: Base gradient, nebulae, then star layers */
+    background-image: linear-gradient(180deg, #020024 0%, #090979 35%, #001f3f 100%),
+                      radial-gradient(ellipse at top left, rgba(147, 112, 219, 0.2) 0%, transparent 50%), /* Subtle purple nebula */
+                      radial-gradient(ellipse at bottom right, rgba(0, 191, 255, 0.15) 0%, transparent 60%), /* Subtle blue nebula */
+                      radial-gradient(ellipse at bottom right, rgba(0, 191, 255, 0.15) 0%, transparent 60%), /* Subtle blue nebula */
+                      /* Star layers */
+                      radial-gradient(1px 1px at 20px 30px, #eee, rgba(0,0,0,0)), /* Near stars */
+                      radial-gradient(1px 1px at 40px 70px, #fff, rgba(0,0,0,0)),
+                      radial-gradient(1px 1px at 50px 160px, #ddd, rgba(0,0,0,0)),
+                      radial-gradient(1.5px 1.5px at 90px 40px, #fff, rgba(0,0,0,0)), /* Mid stars */
+                      radial-gradient(1px 1px at 130px 80px, #fff, rgba(0,0,0,0)),
+                      radial-gradient(1px 1px at 160px 120px, #ddd, rgba(0,0,0,0)),
+                      radial-gradient(0.5px 0.5px at 200px 200px, #fff, rgba(0,0,0,0)), /* Far stars */
+                      radial-gradient(0.5px 0.5px at 300px 300px, #ddd, rgba(0,0,0,0)),
+                      radial-gradient(0.5px 0.5px at 400px 400px, #fff, rgba(0,0,0,0));
+    background-repeat: repeat;
+    background-size: cover, cover, cover, /* Cover for gradient/nebulae */
+                     250px 250px, 250px 250px, 250px 250px, /* Near stars tile size */
+                     500px 500px, 500px 500px, 500px 500px, /* Mid stars tile size */
+                     1000px 1000px, 1000px 1000px, 1000px 1000px; /* Far stars tile size */
+    background-position: 0 0; /* Initial position */
+    animation: move-stars-far 200s linear infinite, /* Apply animations */
+               move-stars-mid 150s linear infinite,
+               move-stars-near 100s linear infinite;
+    color: #e0e0e0; /* Light grey text color */
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    margin: 0;
+    padding: 20px;
+    min-height: 100vh; /* Ensure background covers full height */
+}
+
+
+.container {
+    max-width: 800px;
+}
